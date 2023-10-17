@@ -25,35 +25,7 @@ public class ComponentScanner {
             e.printStackTrace();
         }
     }
-    public void initialize(String basePackage, Map<String, Object> beans){
-        Set<Class<?>> classes = getClassesWithComponentAnnotation(basePackage);
-        for(Class<?> myClass : classes){
-            try {
-                Object bean = myClass.getDeclaredConstructor().newInstance();
-                beans.put(bean.getClass().getName(), bean);
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-   /* public void initialize(String basePackage, Map<String, Object> beans){
-        Reflections scanner = new Reflections(basePackage);
-        Set<Class<?>> components = scanner.getTypesAnnotatedWith(Component.class);
-        for(Class<?> component : components){
-            try {
-                Object object = component.getDeclaredConstructor().newInstance();
-                beans.put(object.getClass().getName(),object);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-        for (var i:
-             components) {
-            System.out.println(i.toString());
-        }
-    }*/
-    /*public void initialize(String basePackage, Map<String, Object> beans) {
+    public void initialize(String basePackage, Map<String, Object> beans) {
         Reflections scanner = new Reflections(basePackage);
         Set<Class<?>> components = scanner.getTypesAnnotatedWith(Component.class);
         for (Class<?> component : components) {
@@ -64,8 +36,7 @@ public class ComponentScanner {
                 e.printStackTrace();
             }
         }
-    }*/
-
+    }
     private Object createBeanInstance(Object myCLass) throws Exception {
         return myCLass.getClass().getConstructor().newInstance();
     }

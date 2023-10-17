@@ -6,7 +6,7 @@ import org.example.container.injection.Application;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IllegalAccessException {
         Application application = Starter.run(List.of("org.example"));
     }
 }
