@@ -25,7 +25,7 @@ public class PropertiesInject {
 
     private void injectDependency(Object bean, Field field, Map<String, Object> beans) throws IllegalAccessException {
         Class<?> fieldType = field.getType();
-        Object dependency = beans.get(fieldType);
+        Object dependency = beans.get(fieldType.getName());
         if(dependency!=null){
             field.setAccessible(true);
             field.set(bean,dependency);

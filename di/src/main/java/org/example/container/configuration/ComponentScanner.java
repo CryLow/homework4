@@ -31,7 +31,7 @@ public class ComponentScanner {
         for (Class<?> component : components) {
             try {
                 Object object = component.getDeclaredConstructor().newInstance();
-                beans.put(object.getClass().getName(), object);
+                beans.put(component.getName(), object);
             } catch (Exception e) {
                 e.printStackTrace();
             }

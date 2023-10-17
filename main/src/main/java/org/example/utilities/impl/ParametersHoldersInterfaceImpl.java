@@ -8,7 +8,6 @@ public class ParametersHoldersInterfaceImpl implements ParametersHolderInterface
     public static final String someText = "Test text....";
 
     public String getSomeText() {
-        System.out.println("Parameters holder complete!");
         return someText;
     }
 }
